@@ -53,7 +53,7 @@ $("document").ready(function() {
             }
             lastNum=(10-(totalNum%10))%10;
 
-            
+
             if(lastNum==Number(value.substr(9, 1))){
                 kural3=true;
             }
@@ -88,10 +88,10 @@ $("document").ready(function() {
         var isValid = checkTcNum($(this).val());
         console.log(isValid);
         if (isValid) {
-          $('#text_tc').text("Geçerli vergi no").attr('class', ' text-success');
+          $('#text_tc').text("Geçerli kimlik no").attr('class', ' text-success');
         }
         else {
-          $('#text_tc').text("Geçersiz vergi no").attr('class', 'text-danger');
+          $('#text_tc').text("Geçersiz kimlik no").attr('class', 'text-danger');
         }
       });
   }); //document.ready
