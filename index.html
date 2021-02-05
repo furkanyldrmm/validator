@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    </head>
+    <body>
+        <div class="container">
+            <h2 style="text-align: center;">Input Validator</h2>
+          
+            <ul class=" d-flex align-items-center nav nav-tabs justify-content-center">
+              <li class="active"><a data-toggle="tab" href="#home">TC. Kimlik</a></li>
+              <li><a data-toggle="tab" href="#menu1">Vergi No</a></li>
+              <li><a data-toggle="tab" href="#menu3">Nasıl Çalışır ?</a></li>
+            </ul>
+          
+            <div class="tab-content center">
+              <div id="home" class="tab-pane fade in active">
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input id="tc" type="tel" class="input-lg form-control" autocomplete="off" placeholder="Kimlik numarası giriniz">
+                      </div>
+                      <h4 id="text_tc" class="text-uppercase text-danger"></h4>
+
+                    </div>
+                  </form>
+              </div>
+
+
+              <div id="menu1" class="tab-pane fade">
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <input id="vergi_no" type="tel" class="input-lg form-control" autocomplete="off" placeholder="Vergi Numarası Giriniz">
+                      </div>
+                      <h4 id="text_vergi" class="text-uppercase text-danger"></h4>
+
+                    </div>
+                  </form>
+              </div>
+            
+              <div id="menu3" class="tab-pane fade">
+                <h3>Kullanılan Formüller</h3>
+                <p>
+
+                    Tc Kimlik Numarası aslında 9 haneden oluşmaktadır, son 2 hanesi de kontrol/doğrulama amaçlı eklenmiştir. Kimlik numarası 0 ile başlayamaz. İlk 9 rakam kullanılarak 10. hane, ilk 10 rakam kullanılarak da 11. hane elde edilmektedir.
+                    
+                    1., 3., 5., 7. ve 9. hanelerdeki rakamlar toplanır, 7 ile çarpılır ve 2., 4., 6. ve 8. hanelerdeki rakamların toplamı çıkarılır. Elde edilen sonucun birler basamağı (mod 10) kimlik numarasının 10. hanesini vermektedir.
+                    
+                    Kimlik numarasının ilk 9 hanesi ile yukarıdaki yöntemle elde ettiğimiz 10. haneyi topladığımızda birler basamağı (mod 10) 11. haneyi vermektedir.
+                    
+                    
+                    </p>
+                    <p>
+                        Vergi numarasının ilk 9 rakamına sırayla 10 eklenip sıra değeri (en büyük basamak değeri 1 ve en küçük basamak değeri 9 kabul edilir) çıkarılır, çıkan sonucun modül 10'a göre değeri alınır. Elde edilen değer 9 ise bir işlem yapmadan bırakılır. 9 dan farklı bir rakam elde edildi ise değer 2'nin 10 eksi sıra değeri kuvveti ile çarpılıp, modül 9 a göre değeri ele alınır. Tüm rakamlar için bu işlemler tekrar edildiğinde yeni elde edilen bu 9 rakam toplanır ve modül 10'a göre değeri hesaplanır. Elde ettiğimiz rakam 10 dan çıkarılır ve tekrar modül 10'a göre değeri vergi numaramızın 10. rakamımızı verir.
+
+                    </p>
+              </div>
+            </div>
+          </div>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <script src="script.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    </body>
+</html>
